@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import FlashCardList from './components/FlashCardList';
 
@@ -27,9 +27,23 @@ import FlashCardList from './components/FlashCardList';
 
 function App() {
   const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)
-  return (
 
-    <FlashCardList flashcards={flashcards} />
+  // useEffect(() => {
+  //   API.get('http://localhost:3000')
+  //   .then(res => {
+  //     res.data.results.map((questionItem, index) => {
+  //       return{
+  //         id: 
+  //       }
+  //     })
+  //    }
+
+  // },[])
+
+  return (
+    <div className='container'>
+      <FlashCardList flashcards={flashcards} />
+    </div>
 
       // <Router>
       //   <UserContextProvider>
@@ -54,6 +68,9 @@ function App() {
       //     </Routes>
       //   </UserContextProvider>
       // </Router>
+
+
+      
 
   );
 }
