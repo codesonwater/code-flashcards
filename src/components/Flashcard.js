@@ -10,7 +10,9 @@ function Flashcard ({ flashcard }){
     >
 
       <div className="front">
+        <div className="question">
         {flashcard.question}
+        </div>
         <div className="flashcard-options">
           {flashcard.options.map(option => {
             return <div className="flashcard-option" key={option}>{option}</div>

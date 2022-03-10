@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
-import FlashCardList from './components/FlashCardList';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import FlashCardList from "./components/FlashCardList";
 
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { UserContextProvider } from './context/UserContext';
@@ -11,7 +11,6 @@ import FlashCardList from './components/FlashCardList';
 // import { AuthRoute } from './components/AuthRoute';
 // import { AuthenticatedPage } from './pages/Authenticated';
 // import HomePage from './pages/Home';
-
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBb2f2-cHxcPrYMdoYkA6uxcUM68XzrIOE",
@@ -26,52 +25,43 @@ import FlashCardList from './components/FlashCardList';
 // initializeApp(firebaseConfig);
 
 function App() {
-  const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)
+  const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS);
 
   // useEffect(() => {
-  //   API.get('http://localhost:3000')
-  //   .then(res => {
-  //     res.data.results.map((questionItem, index) => {
-  //       return{
-  //         id: 
-  //       }
-  //     })
-  //    }
-
-  // },[])
+  //   fetch to api bring in all data 
+  //   API.get("http://localhost:3000")
+  //     .then((res) => res.json())
+  //     .then((data) => setFlashcards(data));
+  // }, []);
 
   return (
-    <div className='container'>
+    <div className="container">
       <FlashCardList flashcards={flashcards} />
     </div>
 
-      // <Router>
-      //   <UserContextProvider>
-      //     <Routes>
-      //       <Route
-      //         path="/login"
-      //         element={
-      //           <GuestRoute>
-      //             <LoginPage />
-      //           </GuestRoute>
-      //         }
-      //       />
-      //       <Route
-      //         path="/authenticated"
-      //         element={
-      //           <AuthRoute>
-      //             <AuthenticatedPage />
-      //           </AuthRoute>
-      //         }
-      //       />
-      //       <Route path="/" element={<HomePage />} />
-      //     </Routes>
-      //   </UserContextProvider>
-      // </Router>
-
-
-      
-
+    // <Router>
+    //   <UserContextProvider>
+    //     <Routes>
+    //       <Route
+    //         path="/login"
+    //         element={
+    //           <GuestRoute>
+    //             <LoginPage />
+    //           </GuestRoute>
+    //         }
+    //       />
+    //       <Route
+    //         path="/authenticated"
+    //         element={
+    //           <AuthRoute>
+    //             <AuthenticatedPage />
+    //           </AuthRoute>
+    //         }
+    //       />
+    //       <Route path="/" element={<HomePage />} />
+    //     </Routes>
+    //   </UserContextProvider>
+    // </Router>
   );
 }
 
@@ -80,50 +70,32 @@ const SAMPLE_FLASHCARDS = [
     id: 1,
     question: "What is 2+2?",
     answer: "4",
-    options: [
-      "2",
-      "3",
-      "4",
-      "5",
-    ]
+    options: ["2", "3", "4", "5"],
   },
   {
-    id:2,
+    id: 2,
     question: "What does CRUD stand for?",
     answer: " Create, Read, Update, Delete",
-    options:[
-
-    ]
-    
+    options: [],
   },
   {
-    id:3,
+    id: 3,
     question: "What is an object?",
     answer: "A collection of keys and values",
-    options:[
-
-    ]
-    
+    options: [],
   },
   {
-    id:4,
+    id: 4,
     question: "There is only one way to write a function?",
     answer: "No",
-    options:[
-      "Yes",
-      "No"
-    ]
-    
+    options: ["Yes", "No"],
   },
   {
-    id:5,
+    id: 5,
     question: "You can use both single and double quotes in JS?",
     answer: " True",
-    options:[
-      "True",
-      "False"
-    ]
+    options: ["True", "False"],
   },
-]
+];
 
 export default App;
