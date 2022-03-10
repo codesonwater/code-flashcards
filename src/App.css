@@ -8,14 +8,42 @@ body {
   margin: 1rem 13%;
 }
 
+.cardSlider {
+  display: flex;
+  justify-content: center;
+}
+
+.sliderNav {
+  margin: 3%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sliderBtn {
+  background-color: #78909cff;
+  border: none;
+  color: whitesmoke;
+  font-size: large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  width: 6vw;
+}
+
+.sliderBtn:hover {
+background-color: lightseagreen;
+color: white;
+
+}
+
 .question {
   color: #333;
   font-size: 2vw;
   font-family:'Times New Roman', Times, serif;
   font-weight: 700;
-  text-indent: 1rem;
-  
+  text-align: left;
+  padding: 0 20px;
 }
+
 
 .card-grid {
   display: grid;
