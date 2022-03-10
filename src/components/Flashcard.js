@@ -11,16 +11,18 @@ function Flashcard ({ flashcard }){
 
       <div className="front">
         <div className="question">
-        {flashcard.question}
+        {flashcard?.question}
         </div>
+        {flashcard.options &&
         <div className="flashcard-options">
-          {flashcard.options.map(option => {
+          {flashcard?.options.map(option => {
             return <div className="flashcard-option" key={option}>{option}</div>
           })}
         </div>
+        }
       </div> 
 
-      <div className="back">{flashcard.answer}</div>
+      <div className="back">{flashcard?.answer}</div>
     </div>
   )
 }
