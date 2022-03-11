@@ -20,8 +20,8 @@ function CardSlider() {
         <Flashcard flashcard={flashcard} />
       </div>
       <div className="sliderNav">
-        <button className="sliderBtn"> {'◀'} </button>
-        <button className="sliderBtn"> {'►'} </button>
+        <button className="sliderBtn-L"> {'◀'} </button>
+        <button className="sliderBtn-R"> {'►'} </button>
       </div>
     </>
   );
