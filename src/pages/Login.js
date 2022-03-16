@@ -1,28 +1,30 @@
-// import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-// import { useContext } from 'react';
-// import { useNavigate } from 'react-router';
-// import { UserContext } from '../context/UserContext';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router';
+import { UserContext } from '../context/UserContext';
 
-// function LoginPage () {
-//   const { setUser } = useContext(UserContext);
-//   const navigate = useNavigate();
+function LoginPage () {
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-//   const auth = getAuth();
-//   const provider = new GoogleAuthProvider();
-//   const login = () => {
-//     signInWithPopup(auth, provider)
-//       .then((result) => {
-//         setUser(result.user);
-//         navigate('/authenticated');
-//       })
-//       .catch((error) => alert(error.message));
-//   };
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  const login = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser(result.user);
+        navigate('/authenticated');
+      })
+      .catch((error) => alert(error.message));
+  };
 
-//   return (
-//     <>
-//       <button onClick={() => login()}>Login</button>
-//     </>
-//   );
-// };
+  return (
+    <>
+      {/* <button onClick={() => login()}>Login</button> */}
+      <button>Login</button>
+      <h1>hello world</h1>
+    </>
+  );
+};
 
-// export default LoginPage
+export default LoginPage

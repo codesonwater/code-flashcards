@@ -1,9 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import CardSlider from "./pages/CardSlider";
+import { ThemeContext } from "./context/ThemeContext";
 import "./App.css";
-import CardSlider from "./components/CardSlider";
+import LoginPage from "./pages/Login";
+import Homepage from "./pages/Home";
+import Header from "./components/Header";
 
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 // import { UserContextProvider } from './context/UserContext';
 // import { initializeApp } from 'firebase/app';
 
@@ -11,7 +16,6 @@ import CardSlider from "./components/CardSlider";
 // import { LoginPage } from './pages/Login';
 // import { AuthRoute } from './components/AuthRoute';
 // import { AuthenticatedPage } from './pages/Authenticated';
-// import HomePage from './pages/Home';
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBb2f2-cHxcPrYMdoYkA6uxcUM68XzrIOE",
@@ -27,9 +31,17 @@ import CardSlider from "./components/CardSlider";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/questions/:id" element={<CardSlider />}/>
-    </Routes>
+    <>
+    {/* <ThemeContext.Provider> */}
+      <Header />
+      <Routes>
+        <Route path="/questions/" element={<CardSlider />} />
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+      </Routes>
+      {/* <Footer /> */}
+    {/* </ThemeContext.Provider> */}
+    </>
   );
 }
 
