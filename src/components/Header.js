@@ -1,14 +1,29 @@
-import { useNavigate } from "react-router-dom";
+import { render } from '@testing-library/react';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import { ThemeContext } from '../context/ThemeContext';
+import ThemeToggle from './ThemeToggle';
 
-
-function Header() {
-
+class Header extends Component {
+  render() {
     return (
-    <header className="header">
-      <button className="headerLogo"> {"{  codeCards  }"} </button>
-      <button className="loginNavBtn"> Login </button>
-    </header>
-  );
+      <ThemeContext.Consumer>
+        {( context ) => {
+        const { isLightTheme, light, dark } = context;
+        const theme = isLightTheme ? light : dark;
+        return (
+            // <nav style={{ background: theme.background, color: theme.textHeader }}>
+              <header className='header'>
+                <Link to="/" className="headerLogo" style={{float:"inline-start"}}> {"{  codeCards  }"} </Link>
+                <Link to="login" className="NavItem"> Login </Link>
+                <Link to="create" className="NavItem"> Add A Question </Link>
+                <ThemeToggle />
+              </header>
+            // </nav>
+          )   
+      }}</ThemeContext.Consumer>
+    );
+  }
 }
 
-export default Header
+export default Header 

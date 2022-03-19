@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function TopicSelector() {
   const [selectedTopic, setSelectedTopic] = useState("");
-  const params = useParams();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit clicked");
-    console.log(selectedTopic);
-    navigate("/questions/");
+    navigate("/questions/"+selectedTopic);
   };
 
   return (
