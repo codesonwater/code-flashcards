@@ -3,8 +3,8 @@ import TopicSelector from "../components/TopicSelector";
 
 function Homepage() {
   return (
-    <>
-      <section className="homeBg">
+    <>      
+     <section className="HomeBg">
         <p>welcome to</p>
         <h1> {" { codeCards } "} </h1>
         <br />
