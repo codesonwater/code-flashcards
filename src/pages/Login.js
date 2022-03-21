@@ -26,10 +26,8 @@ function LoginPage () {
 
   return (
     <>
-      <h1 className='h1'>Please login</h1>
-      <button onClick={() => login()}>Login</button>
-      <p>Not a user already?</p>
-      <button>Signup</button>
+      <h1 style={{marginTop: "10%"}} className='h1'>{ "{ Please Login }" }</h1>
+      <button className='button' onClick={() => login()}>Login</button>
     </>
   );
 };

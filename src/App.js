@@ -6,6 +6,7 @@ import "./App.css";
 import LoginPage from "./pages/Login";
 import Homepage from "./pages/Home";
 import Header from "./components/Header";
+import AddACard from "./pages/AddACard";
 
 import { UserContextProvider } from './context/UserContext';
 import { GuestRoute } from './components/GuestRoute';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/questions/" element={<CardSlider />} />
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/questions/create" element={<AddACard />}></Route>
       </Routes>
       {/* <Footer /> */}
     </ThemeContextProvider>

@@ -15,8 +15,8 @@ class Header extends Component {
             // <nav style={{ background: theme.background, color: theme.textHeader }}>
               <header className='header'>
                 <Link to="/" className="headerLogo" style={{float:"inline-start"}}> {"{  codeCards  }"} </Link>
-                <Link to="login" className="NavItem"> Login </Link>
-                <Link to="create" className="NavItem"> Add A Question </Link>
+                <Link to="login"  className="NavItem"> Login </Link>
+                <Link to="/questions/create" className="NavItem"> Add A Card </Link>
                 <ThemeToggle />
               </header>
             // </nav>
