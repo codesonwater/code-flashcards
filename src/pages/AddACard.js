@@ -15,7 +15,7 @@ function AddACard() {
   return (
     <>
     <html className={isLightTheme ? '': 'dark-bg'}>
-      <p style={{marginTop: "3%"}}>why not</p>
+      <div style={{marginTop: "3%"}}></div>
       <h1> {" { Add Your Own Card }"} </h1>
       <br />
       <div className={isLightTheme ? 'formStyles': 'formStyles-dark'}>
