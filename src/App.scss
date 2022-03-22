@@ -3,6 +3,49 @@
   padding: 0;
   }
 
+:root {
+  background-image: linear-gradient(to bottom right, #e7f0f3, #adcfd260);
+  
+}
+html.dark-bg {
+  background-image: linear-gradient(to bottom right, #354D5A, #25363f);
+  height: 100vh;
+  padding-top: 2px;
+}
+
+
+$light-text-header: '#333';
+$light-text-options: '#555';
+$light-element: "#fbfbf9";
+$light-bg: white;
+$light-bgImage: linear-gradient(to bottom right, #e7f0f3, #adcfd260);
+
+$dark-text-header: '#fff';
+$dark-text-options: '#ddd';
+$dark-element: "#232426";
+$dark-bg: "#4d5156ff";
+$dark-bgImage: linear-gradient(to bottom right, #4d5156ff, #25363f);
+
+
+header {
+  border-bottom: 2px solid #b87887;
+  background-color: $light-bg;
+  min-height: 64px;
+  width: 100vw;
+  display: flex;
+  justify-content: right;
+}
+
+.darkHeader {
+  border-bottom: 2px solid #b87887;
+  background-color: #25363f;
+  min-height: 64px;
+  width: 100vw;
+  display: flex;
+  justify-content: right;
+  transition: 0.02 ease-in-out;
+}
+
 .HomeBg {
   height: 100vh;
   width: 100vw;
@@ -14,9 +57,19 @@
   background-attachment: fixed;
   background-size: cover;
 }
+.DarkHomeBg {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 100px;
+  background-image: url("https://images.unsplash.com/photo-1623305463957-df17547327cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"), 
+  linear-gradient(to bottom right, rgba(4, 58, 58, 0.75),rgb(21, 21, 21));
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 body {
-  background-image: linear-gradient(to bottom right, #e7f0f3, #adcfd260);
   justify-content: center;
   display: flex;
   height: 100vh;
@@ -25,15 +78,6 @@ body {
   overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
   z-index: 5;
-}
-
-header {
-  border-bottom: 2px solid #b87887;
-  background-color: white;
-  min-height: 64px;
-  width: 100vw;
-  display: flex;
-  justify-content: right;
 }
 
 a:link {
@@ -62,8 +106,9 @@ a:link {
 }
 
 .NavItem {
-  background-color: white;
-  color: #78909cff;
+  background-color: #ffffff00;
+  // color: #78909cff;
+  color: lightseagreen;
   display: inline-block;
   font-weight: 400;
   font-size: 16px;
@@ -86,7 +131,7 @@ a:link {
 p {
   display: flex;
   justify-content: center;
-  color: lightslategray;
+  color: #778899;
   letter-spacing: 1px;
   font-weight: 400;
 }
@@ -127,7 +172,7 @@ h2 {
 
 .backbtn:hover {
   background-color: #eeeeee;
-  color: #333;
+  color: $light-text-header;
 }
 
 .button {
@@ -202,7 +247,7 @@ box-shadow: 0px 0px 5px 2px #00000050;
 }
 
 .question {
-  color: #333;
+  color: $light-text-header;
   font-size: 2vw;
   font-family:'Times New Roman', Times, serif;
   font-weight: 700;
@@ -257,7 +302,7 @@ box-shadow: 0px 0px 5px 2px #00000050;
 }
 
 .card .back {
-  color: #333;
+  color: $light-text-header;
   font-size: 2vw;
   font-family:'Times New Roman', Times, serif;
   font-weight: 700;
@@ -274,7 +319,7 @@ box-shadow: 0px 0px 5px 2px #00000050;
 
 .flashcard-option {
   margin-top: 0.5rem;
-  color: #555;
+  color: $light-text-options;
   font-size: 1.5vw;
   border-bottom: 1px solid #b7e0e6;
   text-indent: 2rem;
@@ -371,3 +416,7 @@ box-shadow: 0px 0px 5px 2px #00000050;
   color: white;
   box-shadow: 0px 0px 5px 2px #00000050;
 }
+
+.dark {header 
+        {background-color: $dark-bg;}
+      }
