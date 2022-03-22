@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from '../context/ThemeContext';
 
 function AddACard() {
+  const { isLightTheme} =useContext(ThemeContext);
   const [selectedTopic, setSelectedTopic] = useState("");
   const navigate = useNavigate();
 
@@ -12,6 +14,7 @@ function AddACard() {
 
   return (
     <>
+    <html className={isLightTheme ? '': 'dark-bg'}>
       <p style={{marginTop: "3%"}}>why not</p>
       <h1> {" { Add Your Own Card }"} </h1>
       <br />
@@ -72,6 +75,7 @@ function AddACard() {
           </div>
         </form>
       </div>
+      </html>
     </>
   );
 }

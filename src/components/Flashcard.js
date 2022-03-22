@@ -1,28 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Flashcard ({ flashcard }){
+  const { isLightTheme} =useContext(ThemeContext);
   const [flip, setFlip] = useState(false);
 
   return (
     <div
-    className={`card ${flip ? 'flip' : ''}`}
+    className=
+      { isLightTheme 
+        ? ` card ${flip ? 'flip' : ''}` 
+        : ` card-dark ${flip ? 'flip' : ''}`
+      }
       onClick={() => setFlip(!flip)}
     >
 
       <div className="front">
-        <div className="question">
+        <div className={isLightTheme ? 'question': 'question-dark'}>
         {flashcard?.question}
         </div>
         {flashcard.options &&
         <div className="flashcard-options">
           {flashcard?.options.map(option => {
-            return <div className="flashcard-option" key={option}>{option}</div>
+            return( 
+            <div 
+             className={isLightTheme ? 'flashcard-option': 'flashcard-option-dark'}
+             key={option}>{option}
+            </div>)
           })}
         </div>
         }
       </div> 
 
-      <div className="back">{flashcard?.answer}</div>
+      <div 
+      className="back"> {flashcard?.answer}
+      </div>
     </div>
   )
 }
