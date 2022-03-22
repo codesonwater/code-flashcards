@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
 function TopicSelector() {
+  const { isLightTheme} =useContext(ThemeContext);
   const [selectedTopic, setSelectedTopic] = useState("");
   const navigate = useNavigate();
 
@@ -13,7 +15,7 @@ function TopicSelector() {
   return (
     <form>
       <select
-        className="dropdown"
+        className={isLightTheme ? "dropdown" : "dropdown-dark"}
         onChange={(e) => setSelectedTopic(e.target.value)}
       >
         <option value=""> - Select A Topic -</option>

@@ -13,7 +13,6 @@ html.dark-bg {
   padding-top: 2px;
 }
 
-
 $light-text-header: '#333';
 $light-text-options: '#555';
 $light-element: "#fbfbf9";
@@ -150,8 +149,8 @@ h2 {
   margin-bottom: 1vh;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: slategrey;
-  font-size: 1.5rem;
+  color: lightseagreen;
+  font-size: 1.6rem;
   display: flex;
   justify-content: center;
 }
@@ -407,10 +406,11 @@ box-shadow: 0px 0px 5px 2px #00000050;
 }
 
 
-//#################### DROPDOWN STYLES - LIGHT #################### 
+//#################### DROPDOWN STYLES - DARK #################### 
 
 .dropdown {
   width: 300px;
+  font-size: 1rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -425,6 +425,8 @@ box-shadow: 0px 0px 5px 2px #00000050;
   box-shadow: 0 10px 25px rgba(0,0,0,.3);
 }
 .dropdown-dark {
+  color: white;
+  font-size: 1rem;
   width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -432,13 +434,19 @@ box-shadow: 0px 0px 5px 2px #00000050;
   border-radius: 10px;
   padding: 1em;
   box-shadow: 0 10px 25px rgba(0,0,0,.2);
-  background-color: #ededed;
-  border: white solid 3px;
+  background-color: #ffffff00;
+  // background-color: #788f9c;
+  border: #eeeeee solid 3px;
+  
+  
 }
 .dropdown-dark:hover {
-  border: lightseagreen solid 3px;
+  background-color: #788f9c75;
+  border: #eeeeee solid 3px;
   box-shadow: 0 10px 25px rgba(0,0,0,.3);
+  transition: 150ms ease-in-out;
 }
+
 
 .loader {
   margin: auto;
@@ -454,6 +462,8 @@ box-shadow: 0px 0px 5px 2px #00000050;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+//#################### FORM STYLES - LIGHT #################### 
 
 .formStyles {
   width: 300px;
@@ -510,3 +520,45 @@ box-shadow: 0px 0px 5px 2px #00000050;
   color: white;
   box-shadow: 0px 0px 5px 2px #00000050;
 }
+
+//#################### FORM STYLES - DARK #################### 
+
+.formStyles-dark {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+  background-color: #202124;
+  border: #272727 solid 3px;
+}
+
+.formLabels-dark {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #aaa;
+}
+
+.form-input-dark {
+  border: 3px solid #272727 ;
+  border-radius: 10px ;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #00000080;
+}
+
+.form-input-dark:hover {
+  border-radius: 10px ;
+  padding: 10px;
+  border: lightseagreen solid 3px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+/* input:required:invalid {
+  border-color: #c00000;
+} */
+

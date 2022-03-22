@@ -18,10 +18,10 @@ function AddACard() {
       <p style={{marginTop: "3%"}}>why not</p>
       <h1> {" { Add Your Own Card }"} </h1>
       <br />
-      <div className="formStyles">
+      <div className={isLightTheme ? 'formStyles': 'formStyles-dark'}>
         <form>
           <select
-            className="dropdown"
+            className={isLightTheme ? 'dropdown': 'dropdown-dark'}
             onChange={(e) => setSelectedTopic(e.target.value)}
             required = "required"
           >
@@ -42,21 +42,21 @@ function AddACard() {
           </select>
           <br/>
 
-          <div className="formLabels">
+          <div className={isLightTheme ? "formLabels" : "formLabels-dark"}>
           <br/>
             <label><b>Question*</b></label>
             <input 
               type = "text"
               required = "true"
               placeholder="What is 2+2?" 
-              className="form-input"
+              className={isLightTheme ? "form-input" : "form-input-dark"}
             />
           <br/>
             <label><b>Choices</b></label>
             <input 
               type = "text"
               placeholder="1, 2, 3, 4  (4 max)"
-              className="form-input"
+              className={isLightTheme ? "form-input" : "form-input-dark"}
             />
           <br/>
             <label><b>Answer*</b></label>
@@ -64,7 +64,7 @@ function AddACard() {
             type = "text"
             required = "true"
             placeholder="4"
-            className="form-input"
+            className={isLightTheme ? "form-input" : "form-input-dark"}
             />
           <input
             className="form-button"
