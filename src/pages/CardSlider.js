@@ -51,20 +51,20 @@ function CardSlider() {
               <h2>Loading...</h2>
           </>;
   }
-
+  
   return (
-  <>
-  <a href='/' className="backbtn"> ❮ </a>
-  <h2>{selectedTopic}</h2>
-      <div className="cardSlider">
-        <Flashcard flashcard={flashcard} />
-      </div>
+    <html className={isLightTheme ? '': 'dark-bg'}>
+      <a href='/' className="backbtn"> ❮ </a>
+      <h2>{selectedTopic}</h2>
+        <div className="cardSlider">
+          <Flashcard flashcard={flashcard} />
+        </div>
 
-      <div className="sliderNav">
-        <button className="sliderBtn-L" onClick={() => previousSlide() }> {'❮'} </button>
-        <button className="sliderBtn-R" onClick={() => nextSlide() }> {'❯'} </button>
-      </div>
-  </>
+        <div className="sliderNav">
+          <button className="sliderBtn-L" onClick={() => previousSlide() }> {'❮'} </button>
+          <button className="sliderBtn-R" onClick={() => nextSlide() }> {'❯'} </button>
+        </div>
+    </html>
   )
 }
 

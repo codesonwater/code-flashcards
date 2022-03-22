@@ -1,11 +1,11 @@
-import React, { Component, createContext } from 'react'
+import React, { Component, createContext, useState } from 'react'
 
 export const ThemeContext = createContext();
 
 class ThemeContextProvider extends Component {
   state = { 
     isLightTheme: true, 
-    light:  {textHeader: "#333", textOptions: "#555", element: "#fbfbf9", bg: "#f6f7fb" },
+    light:  {textHeader: '#333', textOptions: "#555", element: "#fbfbf9", bg: "#f6f7fb" },
     dark: {textHeader: "#fff", textOptions: "#ddd", element: "#232426", bg: "#4d5156ff"} 
   }
   toggleTheme = () => {
@@ -22,4 +22,13 @@ class ThemeContextProvider extends Component {
 
 export default ThemeContextProvider;
 
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_class
+// function ThemeContextProvider(){
+// const [isLightTheme, setIsLightTheme] = useState(true)
+// toggleTheme = () => { 
+//   (IsLightTheme: !isLightTheme)}
+
+//   return (
+//     ""
+//   )
+// }
+// export default ThemeContextProvider
