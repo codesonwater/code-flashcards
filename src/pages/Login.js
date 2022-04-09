@@ -1,17 +1,16 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useContext, useEffect } from 'react';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { ThemeContext } from '../context/ThemeContext';
 import { UserContext } from '../context/UserContext';
 
 function LoginPage () {
   const { isLightTheme} =useContext(ThemeContext);
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
  
-
   useEffect(() =>{
     const localUser = localStorage.getItem("displayName");
     if (localUser) setUser(localUser);
@@ -26,10 +25,23 @@ function LoginPage () {
       .catch((error) => alert(error.message));
   };
 
+  const logout = () => {
+    signOut(auth).then(navigate("/"));
+    localStorage.clear();
+  };
+
   return (
     <html className={isLightTheme ? '': 'dark-bg'}>
       <h1 style={{marginTop: "10%"}} className='h1'>{ "{ Please Login }" }</h1>
-      <button className='button' onClick={() => login()}>Login</button>
+      {!user
+        ? <button type="button" class="login-with-google-btn" onClick={() => login()}>
+        Sign in with Google
+        </button>
+        : <button type="button" class="button" onClick={() => logout()}>
+        Sign Out
+        </button> 
+      }
+     
     </html>
   );
 };

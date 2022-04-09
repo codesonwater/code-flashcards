@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ThemeContext } from '../context/ThemeContext';
 
 function AddACard() {
-  const { isLightTheme} =useContext(ThemeContext);
+  const {isLightTheme} =useContext(ThemeContext);
   const [selectedTopic, setSelectedTopic] = useState("");
   const navigate = useNavigate();
 
